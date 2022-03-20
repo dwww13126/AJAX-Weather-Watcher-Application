@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather Watchers:</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "javascript.js"></script>
+    </head>
+    <body>
+      <h1 class="pageHeading">Weather Watchers</h1>
+      <form id="userLoginForm" onsubmit="return false">
+        <div class="container">
+          <div id="logindiv">
+          <!--Creates all the user input areas for login and password-->
+              <label for="username">User Name:</label>
+            <input type="text" id="username" value=""/> <br> <br>
+              <label for="password">Password:</label>
+            <input type="password" id="password" value=""/>   <br> <br>
+              <button type="button" id="login" onclick = "loginCall()">Login:</button> <br> <br>
+          </div>
+        </div>
+      </form>
+    </body>
+</html>
