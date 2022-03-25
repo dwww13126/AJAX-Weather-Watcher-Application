@@ -365,11 +365,10 @@ function userLogout() {
   passwordInput.setAttribute("type", "password");
   passwordInput.setAttribute("id", "password");
   passwordInput.setAttribute("value", "");
-  loginButton.setAttribute("type", "button");
   loginButton.setAttribute("id", "login");
   loginButton.setAttribute("onclick", "loginCall()");
   loginButton.innerHTML = "Login:";
-  //Appends the elements to the correct
+  //Appends the elements to the correct parrent elements
   loginDiv.appendChild(usernameLabel);
   loginDiv.appendChild(usernameInput);
   loginDiv.appendChild(passwordLabel);
@@ -377,7 +376,6 @@ function userLogout() {
   loginDiv.appendChild(loginButton);
   containerDiv.appendChild(loginDiv);
   userLoginForm.appendChild(containerDiv);
-  console
   document.body.innerHTML = "";
   document.body.appendChild(pageHeadingH1);
   document.body.appendChild(userLoginForm);
@@ -387,5 +385,36 @@ function userLogout() {
 //stores the user ID in the logout button and other sections of code access
 //this property for certian methoids where required
 function userMainPage(userid) {
-  document.body.innerHTML = "<h1 class='pageHeading'>Weather Watchers</h1><div class='container'><div id='userButtons'><button id='change'>Add or Delete Towns:</button><button id='logout' onclick='userLogout()'>Logout:</button></div><div id='changeTowns'></div><br><h3 id='secondaryWeatherHeader'></h3><table id='weatherTable'></table></div>"
+  //Creates all the dom ellements for seting up the login page
+  var pageHeadingH1 = document.createElement("h1");
+  var secondaryWeatherHeaderH3 = document.createElement("h3");
+  var containerDiv = document.createElement("div");
+  var userButtonsDiv = document.createElement("div");
+  var changeTownsDiv = document.createElement("div");
+  var changeButton = document.createElement("button");
+  var logoutButton = document.createElement("button");
+  var weatherTable = document.createElement("table");
+  //Sets the atributes of the dom elements
+  pageHeadingH1.setAttribute("class", "pageHeading");
+  pageHeadingH1.innerHTML = "Weather Watchers";
+  containerDiv.setAttribute("class", "container");
+  userButtonsDiv.setAttribute("id", "userButtons");
+  changeButton.setAttribute("id", "change");
+  changeButton.innerHTML = "Add or Delete Towns:";
+  logoutButton.setAttribute("id", "logout");
+  logoutButton.setAttribute("onclick", "userLogout()");
+  logoutButton.innerHTML = "Logout:";
+  changeTownsDiv.setAttribute("id", "changeTowns");
+  secondaryWeatherHeaderH3.setAttribute("id", "secondaryWeatherHeader");
+  weatherTable.setAttribute("id", "weatherTable");
+  //Appends the elements to the correct parrent elements
+  userButtonsDiv.appendChild(changeButton);
+  userButtonsDiv.appendChild(logoutButton);
+  containerDiv.appendChild(userButtonsDiv);
+  containerDiv.appendChild(changeTownsDiv);
+  containerDiv.appendChild(secondaryWeatherHeaderH3);
+  containerDiv.appendChild(weatherTable);
+  document.body.innerHTML = "";
+  document.body.appendChild(pageHeadingH1);
+  document.body.appendChild(containerDiv);
 }
