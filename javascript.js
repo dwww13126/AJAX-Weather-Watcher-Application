@@ -338,7 +338,49 @@ function addRowTh3(tb, item1, item2, item3) {
 
 //I used to be able to constuct the login page if the user clicks the logout button
 function userLogout() {
-  document.body.innerHTML = "<h1 class='pageHeading'>Weather Watchers</h1><form id='userLoginForm' onsubmit='return false'><div class='container'><div id ='logindiv'><!--Creates all the user input areas for login and password--><label for='username'>User Name:</label><input type='text' id='username' value=''/> <br> <br><label for='password'>Password:</label><input type='password' id='password' value=''/>   <br> <br><button type='button' id='login' onclick = 'loginCall()'>Login:</button> <br><br></div></div></form>";
+  //Creates all the dom ellements for seting up the login page
+  var pageHeadingH1 = document.createElement("h1");
+  var userLoginForm = document.createElement("form");
+  var containerDiv = document.createElement("div");
+  var loginDiv = document.createElement("div");
+  var usernameLabel = document.createElement("label");
+  var usernameInput = document.createElement("input");
+  var passwordLabel = document.createElement("label");
+  var passwordInput = document.createElement("input");
+  var loginButton = document.createElement("button");
+  //Sets the atributes of the dom elements
+  pageHeadingH1.setAttribute("class", "pageHeading");
+  pageHeadingH1.innerHTML = "Weather Watchers";
+  userLoginForm.setAttribute("id", "userLoginForm");
+  userLoginForm.setAttribute("onsubmit", "return false");
+  containerDiv.setAttribute("class", "container");
+  loginDiv.setAttribute("id", "logindiv");
+  usernameLabel.setAttribute("for", "username");
+  usernameLabel.innerHTML = "User Name:"
+  usernameInput.setAttribute("type", "text");
+  usernameInput.setAttribute("id", "username");
+  passwordInput.setAttribute("value", "");
+  passwordLabel.setAttribute("for", "password");
+  passwordLabel.innerHTML = "User Name:"
+  passwordInput.setAttribute("type", "password");
+  passwordInput.setAttribute("id", "password");
+  passwordInput.setAttribute("value", "");
+  loginButton.setAttribute("type", "button");
+  loginButton.setAttribute("id", "login");
+  loginButton.setAttribute("onclick", "loginCall()");
+  loginButton.innerHTML = "Login:";
+  //Appends the elements to the correct
+  loginDiv.appendChild(usernameLabel);
+  loginDiv.appendChild(usernameInput);
+  loginDiv.appendChild(passwordLabel);
+  loginDiv.appendChild(passwordInput);
+  loginDiv.appendChild(loginButton);
+  containerDiv.appendChild(loginDiv);
+  userLoginForm.appendChild(containerDiv);
+  console
+  document.body.innerHTML = "";
+  document.body.appendChild(pageHeadingH1);
+  document.body.appendChild(userLoginForm);
 }
 
 //I used to be able to constuct the main page if the users login is successful
